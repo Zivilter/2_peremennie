@@ -40,9 +40,16 @@ namespace Peremennyie
             double x;
             x = p4 * ((double)p1 + 3.14) - (double)(int)p3;
             Console.WriteLine("{0}*({1}+3.14)-{2}={3}", p4, p1, p3, x);
-            Console.ReadKey();
-
+            
             //Операция упаковки провелась 1 раз [object p3=p1], и операция распаковки - тоже 1 раз [(int)p3]
+
+            //программа для конвертации массива байт в целое число
+            byte[] m = {0,0,0,1,1};
+            if (BitConverter.IsLittleEndian)
+                Array.Reverse(m);
+            int n = BitConverter.ToInt32(m, 0);
+            Console.WriteLine("Преобразованное число: {0}", n);
+            Console.ReadKey();
         }
     }
 }
