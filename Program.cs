@@ -49,7 +49,17 @@ namespace Peremennyie
                 Array.Reverse(m);
             int n = BitConverter.ToInt32(m, 0);
             Console.WriteLine("Преобразованное число: {0}", n);
+
+            //конвертация строки в число
+            string s;
+            s = "1598";
+            long y;
+            if (long.TryParse(s, out y))
+                Console.WriteLine("Строка {0} конвертируется в число {1}", s, y);
+            else Console.WriteLine("Введено не число");
+
             Console.ReadKey();
+
         }
     }
 }
