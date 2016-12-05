@@ -44,6 +44,7 @@ namespace Peremennyie
             //Операция упаковки провелась 1 раз [object p3=p1], и операция распаковки - тоже 1 раз [(int)p3]
 
             //программа для конвертации массива байт в целое число
+            Console.WriteLine("Программа для конвертации массива байт в целое число");
             byte[] m = {0,0,0,1,1};
             if (BitConverter.IsLittleEndian)
                 Array.Reverse(m);
@@ -51,12 +52,29 @@ namespace Peremennyie
             Console.WriteLine("Преобразованное число: {0}", n);
 
             //конвертация строки в число
+            Console.WriteLine("Конвертация строки в число");
             string s;
             s = "1598";
             long y;
             if (long.TryParse(s, out y))
                 Console.WriteLine("Строка {0} конвертируется в число {1}", s, y);
             else Console.WriteLine("Введено не число");
+
+            //конвертация символа в шестнадцетиричное и целое число
+            string s2="Hello";
+            Console.WriteLine("Входная строка {0}",s2);
+            int n2 = s2.Length;
+            byte z;
+            string h;
+            for(int i=0;i<n2;i++)
+            {
+                z = Convert.ToByte(s2[i]);
+                h = z.ToString("X");
+                Console.WriteLine("Символ {0}: шестнадцетиричное чило:{1}, целое число: {2}",s2[i],h,z);
+            }
+            
+                   
+
 
             Console.ReadKey();
 
